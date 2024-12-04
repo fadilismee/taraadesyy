@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Taraadesy Love</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+  <!-- Navbar -->
   <nav class="navbar">
-    <img src="./images/logo.png" class=" brand-logo" alt="disney+logo">
+    <img src="./images/logo.png" class="brand-logo" alt="Disney+ logo">
     <ul class="nav-links">
       <li class="nav-items"><a href="gift/Welcom..html">Gift</a></li>
       <li class="nav-items"><a href="About/index.html">About U</a></li>
       <li class="nav-items"><a href="">Music</a></li>
     </ul>
-
-    <div class="right-container">
-    </div>
+    <div class="right-container"></div>
   </nav>
 
-
+  <!-- Hero Banner / Carousel -->
   <div class="carousel-container">
-    <div class="carousel">
-      <!-- <div class = "slider">
-          <img src = "./images/slider 1.PNG" class ="card-img alt="Poster1"> 
-        </div> -->
-    </div>
+    <div class="carousel"></div>
   </div>
 
+  <!-- Video Cards -->
   <div class="video-card-container">
     <div class="video-card">
       <img src="./images/disney.PNG" class="video-card-image" alt="disney logo">
@@ -357,30 +354,120 @@
       <!-- end of movie section -->
     </div>
   </div>
-  
-  
 
-
-
-</div>
-
-<div class="last-footer">
+  <!-- Footer -->
+  <div class="last-footer">
     <div class="last-footer-texts">
-        <h3>© 2023 Disney+. All Rights Reserved.</H3>
-        <div class="last-footer-links">
-            <a href="#">Terms Of Use</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">FAQ</a>
-        </div>
+      <h3>© 2023 Disney+. All Rights Reserved.</h3>
+      <div class="last-footer-links">
+        <a href="#">Terms Of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">FAQ</a>
+      </div>
     </div>
     <div class="last-footer-images">
-        <a href="#"><img src="images/google-playstore.webp" class="dwn" alt=""></a>
-        <a href="#"><img src="images/ios-appstore.webp" class="dwn" alt=""></a>
+      <a href="#"><img src="images/google-playstore.webp" class="dwn" alt=""></a>
+      <a href="#"><img src="images/ios-appstore.webp" class="dwn" alt=""></a>
     </div>
-</div>
+  </div>
 
- 
-  <script src="script.js" async></script>
+  <!-- Script -->
+  <script>
+    let movies = [
+      {
+        name: "Loki",
+        des: "Loki is an American television series created by Michael Waldron for the streaming service Disney.",
+        image: "./images/Love1 (1).PNG",
+      },
+      {
+        name: "Falcon and the Winter Soldier",
+        des: "Falcon and the Winter Soldier is an American television series created for the streaming platform Disney+.",
+        image: "./images/Love1 (1).PNG",
+      },
+      {
+        name: "WandaVision",
+        des: "WandaVision is an American television series created for the streaming service Disney+.",
+        image: "./images/Love1 (2).PNG",
+      },
+      {
+        name: "Raya and the Last Dragon",
+        des: "Raya and the Last Dragon is an animated Disney film released in 2021.",
+        image: "./images/Love1 (3).PNG",
+      },
+      {
+        name: "Luca",
+        des: "Luca is a Disney-Pixar animated film released in 2021.",
+        image: "./images/love.PNG",
+      },
+      {
+        name: "Luca",
+        des: "Luca is a Disney-Pixar animated film released in 2021.",
+        image: "./images/love1.PNG",
+      },
+      {
+        name: "Luca",
+        des: "Luca is a Disney-Pixar animated film released in 2021.",
+        image: "./images/love2.PNG",
+      },
+    ];
+
+    const carousel = document.querySelector(".carousel");
+    let sliders = [];
+    let slideIndex = 0;
+
+    const createSlide = () => {
+      if (slideIndex >= movies.length) {
+        slideIndex = 0;
+      }
+
+      let slide = document.createElement("div");
+      let imgElement = document.createElement("img");
+
+      imgElement.src = movies[slideIndex].image;
+      imgElement.style.objectFit = "cover";
+      slide.appendChild(imgElement);
+      carousel.appendChild(slide);
+
+      slideIndex++;
+      slide.className = "slider";
+
+      sliders.push(slide);
+
+      if (sliders.length) {
+        sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${30 * (sliders.length - 2)}px)`;
+      }
+    };
+
+    for (let i = 0; i < 3; i++) {
+      createSlide();
+    }
+
+    setInterval(() => {
+      createSlide();
+    }, 3000);
+
+    const videoCards = document.querySelectorAll(".video-card");
+    videoCards.forEach((item) => {
+      item.addEventListener("mouseover", () => item.children[1].play());
+      item.addEventListener("mouseleave", () => item.children[1].pause());
+    });
+
+    let cardContainers = document.querySelectorAll(".card-container");
+    let preBtns = document.querySelectorAll(".pre-btn");
+    let nxtBtns = document.querySelectorAll(".nxt-btn");
+
+    preBtns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        cardContainers[i].scrollLeft -= cardContainers[i].clientWidth;
+      });
+    });
+
+    nxtBtns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        cardContainers[i].scrollLeft += cardContainers[i].clientWidth;
+      });
+    });
+  </script>
 </body>
 
 </html>
