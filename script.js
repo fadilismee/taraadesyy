@@ -3,41 +3,41 @@ let movies = [
   {
     name: "loki",
     des: "Loki is an American television series created by Michael Waldron for the streaming service Disney.",
-    image: "images/Love1 (1).PNG",
+    image: "images/1.PNG",
   },
   {
     name: "falcon and the winter soldier",
     des: "Falcon and the Winter Soldier is an American television series created for the streaming platform Disney+.",
-    image: "images/Love1 (1).PNG",
+    image: "images/2.PNG",
   },
   {
     name: "WandaVision",
     des: "WandaVision is an American television series created for the streaming service Disney+",
-    image: "images/Love1 (2).PNG",
+    image: "images/3.PNG",
   },
 
   {
     name: "Raya and the Last Dragon",
     des: "Raya and the Last Dragon is an animated Disney film released in 2021.",
-    image: "images/Love1 (3).PNG",
+    image: "images/4.PNG",
   },
 
   {
     name: "Luca",
     des: "Luca is a Disney-Pixar animated film released in 2021.",
-    image: "images/love.PNG",
+    image: "images/5.PNG",
   },
 
   {
     name: "Luca",
     des: "Luca is a Disney-Pixar animated film released in 2021.",
-    image: "images/love1.PNG",
+    image: "images/6.PNG",
   },
 
   {
     name: "Luca",
     des: "Luca is a Disney-Pixar animated film released in 2021.",
-    image: "images/love2.PNG",
+    image: "images/3.PNG",
   },
 ];
 
